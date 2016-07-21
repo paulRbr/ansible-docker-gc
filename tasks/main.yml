@@ -1,0 +1,5 @@
+---
+- name: copy docker-gc script
+  copy: src=docker-gc dest=/usr/sbin/docker-gc owner=root mode=0744
+
+- cron: name="Run docker-gc" minute="0" hour="3" job="/usr/sbin/docker-gc"
